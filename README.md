@@ -1,3 +1,9 @@
+把odin1他tf树方向改了：直接在驱动 TF 发布源头把 odom→map 改为 map→odom，同时对位姿求逆：旋转矩阵取转置、平移变为 -Rᵀt、四元数取共轭。不额外发布反向 TF，而是直接替换原来的 TF，因此树中只保留 map→odom→base_link，避免形成环。
+
+
+
+
+
 开驱动
 
 source install/setup.bash
